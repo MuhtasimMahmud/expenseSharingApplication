@@ -1,10 +1,10 @@
 package com.project.expenseSharingApplication.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+
 
 @Entity
 public class messGroup {
@@ -14,6 +14,9 @@ public class messGroup {
     private int messID;
     private String messName;
     private int totalMember;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private ArrayList<User> userList = new ArrayList<>();
 
 
     // Default Constructor
@@ -50,5 +53,13 @@ public class messGroup {
 
     public void setTotalMember(int totalMember) {
         this.totalMember = totalMember;
+    }
+
+    public ArrayList<User> getUserArrayList() {
+        return userList;
+    }
+
+    public void setUserArrayList(ArrayList<User> userArrayList) {
+        this.userList = userArrayList;
     }
 }

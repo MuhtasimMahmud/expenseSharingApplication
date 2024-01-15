@@ -17,6 +17,10 @@ public class User {
     private String imgUrl;
 
 
+    @ManyToOne
+    private messGroup mess;
+
+
     // Default Constructor
     public User() {
         super();
@@ -89,5 +93,13 @@ public class User {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public messGroup getMess() {
+        return mess;
+    }
+
+    public void setMess(messGroup mess) {
+        this.mess = mess;
     }
 }
