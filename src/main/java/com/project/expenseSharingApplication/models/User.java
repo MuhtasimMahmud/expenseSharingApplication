@@ -16,10 +16,8 @@ public class User {
     private String password;
     private String imgUrl;
 
-
     @ManyToOne
     private messGroup mess;
-
 
     // Default Constructor
     public User() {
@@ -36,7 +34,6 @@ public class User {
         this.password = password;
         this.imgUrl = imgUrl;
     }
-
 
 
     public int getUserID() {

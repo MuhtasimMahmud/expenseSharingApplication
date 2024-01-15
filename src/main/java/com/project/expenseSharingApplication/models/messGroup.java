@@ -15,7 +15,7 @@ public class messGroup {
     private String messName;
     private int totalMember;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "mess")
     private ArrayList<User> userList = new ArrayList<>();
 
     @OneToMany
