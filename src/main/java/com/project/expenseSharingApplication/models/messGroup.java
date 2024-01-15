@@ -18,7 +18,7 @@ public class messGroup {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "mess")
     private ArrayList<User> userList = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "messID")
     private ArrayList<month> monthsList = new ArrayList<>();
 
 

@@ -18,7 +18,7 @@ public class month {
     private int extraCost;
 
     @ManyToOne
-    private messGroup mess;
+    private messGroup messID;
 
     // Default Constructor
     public month() {
@@ -101,11 +101,11 @@ public class month {
         this.extraCost = extraCost;
     }
 
-    public messGroup getMess() {
-        return mess;
+    public messGroup getMessID() {
+        return messID;
     }
 
-    public void setMess(messGroup mess) {
-        this.mess = mess;
+    public void setMessID(messGroup messID) {
+        this.messID = messID;
     }
 }
