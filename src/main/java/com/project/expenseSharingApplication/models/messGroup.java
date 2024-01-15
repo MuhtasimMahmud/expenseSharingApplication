@@ -18,6 +18,9 @@ public class messGroup {
     @OneToMany(cascade = CascadeType.ALL)
     private ArrayList<User> userList = new ArrayList<>();
 
+    @OneToMany
+    private ArrayList<month> monthsList = new ArrayList<>();
+
 
     // Default Constructor
     public messGroup() {
