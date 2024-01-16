@@ -16,10 +16,10 @@ public class messGroup {
     private String messName;
     private int totalMember;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY) //, mappedBy = "messGroup"
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "messGroup")
     private List<User> userList = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY) // , mappedBy = "mGroup"
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "mGroup")
     private List<month> monthsList = new ArrayList<>();
 
 
