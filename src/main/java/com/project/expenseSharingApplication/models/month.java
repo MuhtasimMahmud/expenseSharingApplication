@@ -4,11 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
+import java.time.Month;
+import java.time.Year;
+
 @Entity
 public class month {
 
-    private String monthName;
-    private int monthYear;
+    private Month monthName;
+    private Year monthYear;
     @Id
     private String mID = monthName+","+monthYear;
     private int rent;
@@ -18,7 +21,7 @@ public class month {
     private int extraCost;
 
     @ManyToOne
-    private messGroup messID;
+    private messGroup mGroup;
 
     // Default Constructor
     public month() {
@@ -26,10 +29,9 @@ public class month {
     }
 
     // Custom Constructor
-    public month(String monthName, int monthYear, String mID, int rent, int foodBill, int electricityBill, int utilities, int extraCost) {
+    public month(Month monthName, Year monthYear, int rent, int foodBill, int electricityBill, int utilities, int extraCost) {
         this.monthName = monthName;
         this.monthYear = monthYear;
-        this.mID = mID;
         this.rent = rent;
         this.foodBill = foodBill;
         this.electricityBill = electricityBill;
@@ -37,19 +39,19 @@ public class month {
         this.extraCost = extraCost;
     }
 
-    public String getMonthName() {
+    public Month getMonthName() {
         return monthName;
     }
 
-    public void setMonthName(String monthName) {
+    public void setMonthName(Month monthName) {
         this.monthName = monthName;
     }
 
-    public int getMonthYear() {
+    public Year getMonthYear() {
         return monthYear;
     }
 
-    public void setMonthYear(int monthYear) {
+    public void setMonthYear(Year monthYear) {
         this.monthYear = monthYear;
     }
 
@@ -101,11 +103,11 @@ public class month {
         this.extraCost = extraCost;
     }
 
-    public messGroup getMessID() {
-        return messID;
+    public messGroup getMGroup() {
+        return mGroup;
     }
 
-    public void setMessID(messGroup messID) {
-        this.messID = messID;
+    public void setMGroup(messGroup messID) {
+        this.mGroup = messID;
     }
 }

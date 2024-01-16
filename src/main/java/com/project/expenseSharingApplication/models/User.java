@@ -17,7 +17,7 @@ public class User {
     private String imgUrl;
 
     @ManyToOne
-    private messGroup mess;
+    private messGroup mGroup;
 
     // Default Constructor
     public User() {
@@ -92,11 +92,11 @@ public class User {
         this.imgUrl = imgUrl;
     }
 
-    public messGroup getMess() {
-        return mess;
+    public messGroup getMGroup() {
+        return mGroup;
     }
 
-    public void setMess(messGroup mess) {
-        this.mess = mess;
+    public void setMGroup(messGroup mess) {
+        this.mGroup = mess;
     }
 }
