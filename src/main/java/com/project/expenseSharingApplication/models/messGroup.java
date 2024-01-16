@@ -4,6 +4,7 @@ package com.project.expenseSharingApplication.models;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -15,11 +16,11 @@ public class messGroup {
     private String messName;
     private int totalMember;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "mess")
-    private ArrayList<User> userList = new ArrayList<>();
+    @OneToMany(mappedBy = "mess", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    private List<User> userList = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "messID")
-    private ArrayList<month> monthsList = new ArrayList<>();
+    @OneToMany(mappedBy = "messID", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    private List<month> monthsList = new ArrayList<>();
 
 
     // Default Constructor
@@ -58,11 +59,19 @@ public class messGroup {
         this.totalMember = totalMember;
     }
 
-    public ArrayList<User> getUserArrayList() {
+    public List<User> getUserList() {
         return userList;
     }
 
-    public void setUserArrayList(ArrayList<User> userArrayList) {
-        this.userList = userArrayList;
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
+
+    public List<month> getMonthsList() {
+        return monthsList;
+    }
+
+    public void setMonthsList(List<month> monthsList) {
+        this.monthsList = monthsList;
     }
 }

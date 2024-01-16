@@ -14,12 +14,19 @@ public class userController {
     private UserRepository userRepository;
 
 
+
     @GetMapping("/testing")
     @ResponseBody
     public String test(){
         User user = new User(1, "Mahmud", "muhtasim.mzs16@gmail.com", 11, true, "pass", "imgUrl");
         userRepository.save(user);
         return "working";
+    }
+
+    @GetMapping("/test2")
+    @ResponseBody
+    public String test2(){
+        return "mess group is working";
     }
 
 }
