@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class userController {
+public class testingController {
 
     @Autowired
     private UserRepository userRepository;
@@ -85,8 +85,4 @@ public class userController {
         monthRepository.save(month);
         return "month is working";
     }
-
-
-
-
 }
